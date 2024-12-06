@@ -1,0 +1,753 @@
+<div class='container d-flex justify-content-center align-items-center'>
+  <div class='card shadow-lg p-4' style='width: 100%; max-width: 800px;'>
+    <div class='card-body'>
+      <!-- Formulário começa aqui -->
+      <div class='mb-3 text-center'>
+        <h1>Preencher Missão {{currentMission}} de {{qtdeMissoes}}</h1>
+      </div>
+      <div class='mb-3'>
+        Criar missão da Gamificação
+      </div>
+      <p class='col-6'>
+        <form action='/missions/create' method='post'>
+          <input type='hidden' name='qtdeMissoes' value='{{qtdeMissoes}}' />
+          <!-- Pergunta: Descreva sobre o conteúdo que será aprendido nesta missão. -->
+          <div class='mb-3'>
+            <label for='content' class='form-label'>
+              Descreva sobre o conteúdo que será aprendido nesta missão. (Quanto
+              mais detalhes você fornecer sobre o conteúdo ministrado, mais
+              personalizada e específica a gamificação será em relação ao que
+              será ensinado.)
+            </label>
+            <textarea
+              class='form-control'
+              id='content'
+              name='content'
+              rows='4'
+              placeholder='Descreva o conteúdo aqui...'
+            ></textarea>
+          </div>
+          <!-- Pergunta: Descreva sobre o conteúdo que será aprendido nesta missão. -->
+
+          <!-- Pergunta: Qual será o tipo de avaliação nesta missão? -->
+          <div class='mb-3'>
+            <label for='evaluationType' class='form-label'>Qual será o tipo de
+              avaliação nesta missão?</label>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='radio'
+                name='evaluationType'
+                id='optionTradicional'
+                value='Avaliações Tradicionais (Ex.: Provas escritas, Testes de múltipla
+          escolha, Questionários, Trabalhos escritos, Relatórios, etc.)'
+              />
+              <label class='form-check-label' for='optionTradicional'>
+                Avaliações Tradicionais (Ex.: Provas escritas, Testes de
+                múltipla escolha, Questionários, Trabalhos escritos, Relatórios,
+                etc.)
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='radio'
+                name='evaluationType'
+                id='optionPratica'
+                value='Avaliações Práticas (Ex.: Projetos práticos, Simulações, Laboratórios,
+          Testes práticos, etc.)'
+              />
+              <label class='form-check-label' for='optionPratica'>
+                Avaliações Práticas (Ex.: Projetos práticos, Simulações,
+                Laboratórios, Testes práticos, etc.)
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='radio'
+                name='evaluationType'
+                id='optionComunicacao'
+                value='Avaliações de Comunicação (Ex.: Provas orais, Apresentações em geral,
+          Entrevistas, Seminários, Pitches, etc.)'
+              />
+              <label class='form-check-label' for='optionComunicacao'>
+                Avaliações de Comunicação (Ex.: Provas orais, Apresentações em
+                geral, Entrevistas, Seminários, Pitches, etc.)
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='radio'
+                name='evaluationType'
+                id='optionColaborativa'
+                value='Avaliações Colaborativas (Ex.: Trabalhos em grupo, Discussões em
+          grupo, Debates, Discussões em fóruns, etc.)'
+              />
+              <label class='form-check-label' for='optionColaborativa'>
+                Avaliações Colaborativas (Ex.: Trabalhos em grupo, Discussões em
+                grupo, Debates, Discussões em fóruns, etc.)
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='radio'
+                name='evaluationType'
+                id='optionDigital'
+                value='Avaliações Digitais (Ex.: Atividades em plataformas de aprendizagem
+          online, Respostas em fóruns de discussão, Quizzes online, etc.)'
+              />
+              <label class='form-check-label' for='optionDigital'>
+                Avaliações Digitais (Ex.: Atividades em plataformas de
+                aprendizagem online, Respostas em fóruns de discussão, Quizzes
+                online, etc.)
+              </label>
+            </div>
+          </div>
+          <!-- Pergunta: Qual será o tipo de avaliação nesta missão? -->
+
+          <!-- Pergunta: Que tipos de obstáculos ou desafios você gostaria de incluir nesta missão? -->
+          <div class='mb-3'>
+            <label for='missionObstacles' class='form-label'>
+              Que tipos de obstáculos ou desafios você gostaria de incluir nesta
+              missão? (Escolha até 3 opções, ao menos uma é obrigatória)
+            </label>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                value='Inimigos'
+                id='checkInimigos'
+                name='missionObstacles'
+              />
+              <label class='form-check-label' for='checkInimigos'>
+                Inimigos
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                value='Tempo'
+                id='checkTempo'
+                name='missionObstacles'
+              />
+              <label class='form-check-label' for='checkTempo'>
+                Tempo
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                value='Desafios de Conhecimento'
+                id='checkConhecimento'
+                name='missionObstacles'
+              />
+              <label class='form-check-label' for='checkConhecimento'>
+                Desafios de Conhecimento (Ex.: Enigmas, Quebra-Cabeças, Quizzes)
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                value='Desafios Físicos'
+                id='checkFisicos'
+                name='missionObstacles'
+              />
+              <label class='form-check-label' for='checkFisicos'>
+                Desafios Físicos (Ex.: Obstáculos no ambiente, Desafios
+                Esportivos)
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                value='Decisões Difíceis'
+                id='checkDecisoes'
+                name='missionObstacles'
+              />
+              <label class='form-check-label' for='checkDecisoes'>
+                Decisões Difíceis
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                value='Recursos Limitados'
+                id='checkRecursos'
+                name='missionObstacles'
+              />
+              <label class='form-check-label' for='checkRecursos'>
+                Recursos Limitados
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                value='Armadilhas'
+                id='checkTraps'
+                name='missionObstacles'
+              />
+              <label class='form-check-label' for='checkTraps'>
+                Armadilhas
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                value='Interferências Externas'
+                id='checkInterferencias'
+                name='missionObstacles'
+              />
+              <label class='form-check-label' for='checkInterferencias'>
+                Interferências Externas (Ex.: Eventos inesperados)
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                value='Mistérios a Resolver'
+                id='checkMisterios'
+                name='missionObstacles'
+              />
+              <label class='form-check-label' for='checkMisterios'>
+                Mistérios a Resolver
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                value='Sabotagem de Aliados'
+                id='checkSabotagem'
+                name='missionObstacles'
+              />
+              <label class='form-check-label' for='checkSabotagem'>
+                Sabotagem de Aliados
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                value='Conflitos entre Personagens'
+                id='checkConflitos'
+                name='missionObstacles'
+              />
+              <label class='form-check-label' for='checkConflitos'>
+                Conflitos entre Personagens
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                value='Outro'
+                id='checkOutro'
+                aria-label='Checkbox for following text input'
+                name='missionObstacles'
+              />
+              <label class='form-check-label' for='checkOutro'>
+                Outro:
+              </label>
+              <input
+                type='text'
+                class='form-control mt-1'
+                aria-label='Text input with checkbox'
+                id='otherObstacles'
+                placeholder='Especifique'
+                name='missionObstacles'
+              />
+            </div>
+          </div>
+          <!-- Pergunta: Que tipos de obstáculos ou desafios você gostaria de incluir nesta missão? -->
+
+          <!-- Pergunta: Como os participantes interagirão entre si e com o sistema de gamificação? -->
+          <div class='mb-3'>
+            <label for='interactionType' class='form-label'>
+              Como os participantes interagirão entre si e com o sistema de
+              gamificação? (Escolha até 2 opções, ao menos uma é obrigatória)
+            </label>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                value='Interação Colaborativa (Ex.: Equipes Colaborativas, Desafios
+          Compartilhados, Desafios de Colaboração, Feedback entre Pares, Votação
+          e Tomada de Decisão Coletiva)'
+                id='checkColaborativa'
+                name='interactionType'
+              />
+              <label class='form-check-label' for='checkColaborativa'>
+                Interação Colaborativa (Ex.: Equipes Colaborativas, Desafios
+                Compartilhados, Desafios de Colaboração, Feedback entre Pares,
+                Votação e Tomada de Decisão Coletiva)
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                value='Interação Comunicativa (Ex.: Fórum de Discussão, Chat ao Vivo, Sessões
+          de Perguntas e Respostas)'
+                id='checkComunicativa'
+                name='interactionType'
+              />
+              <label class='form-check-label' for='checkComunicativa'>
+                Interação Comunicativa (Ex.: Fórum de Discussão, Chat ao Vivo,
+                Sessões de Perguntas e Respostas)
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                value='Interação Competitiva (Ex.: Competições Amigáveis, Ranqueamento de
+          Equipes)'
+                id='checkCompetitiva'
+                name='interactionType'
+              />
+              <label class='form-check-label' for='checkCompetitiva'>
+                Interação Competitiva (Ex.: Competições Amigáveis, Ranqueamento
+                de Equipes)
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                value='Interação Social e Reconhecimento (Ex.: Reconhecimento Social,
+          Compartilhamento em Redes Sociais)'
+                id='checkSocial'
+                name='interactionType'
+              />
+              <label class='form-check-label' for='checkSocial'>
+                Interação Social e Reconhecimento (Ex.: Reconhecimento Social,
+                Compartilhamento em Redes Sociais)
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                value='Outro'
+                id='checkOutroInteracao'
+                aria-label='Checkbox for following text input'
+                name='interactionType'
+              />
+              <label class='form-check-label' for='checkOutroInteracao'>
+                Outro:
+              </label>
+              <input
+                type='text'
+                class='form-control mt-1'
+                aria-label='Text input with checkbox'
+                id='otherInteraction'
+                name='interactionType'
+              />
+            </div>
+          </div>
+          <!-- Pergunta: Como os participantes interagirão entre si e com o sistema de gamificação? -->
+
+          <!-- Pergunta: Que tipo de recompensas motivariam os participantes nesta missão? -->
+          <div class='mb-3'>
+            <label for='rewardType' class='form-label'>
+              Que tipo de recompensas motivariam os participantes nesta missão?
+              (Escolha até 2 opções, ao menos uma é obrigatória)
+            </label>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                value='Recompensas de Progresso e Reconhecimento (Ex.: Pontos, Emblemas
+          Virtuais, Medalhas Virtuais, Certificados Personalizados,
+          Reconhecimento no Hall da Fama, etc.)'
+                id='checkProgresso'
+                name='rewardType'
+              />
+              <label class='form-check-label' for='checkProgresso'>
+                Recompensas de Progresso e Reconhecimento (Ex.: Pontos, Emblemas
+                Virtuais, Medalhas Virtuais, Certificados Personalizados,
+                Reconhecimento no Hall da Fama, etc.)
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                value='Recompensas de Personalização e Exclusividade (Ex.: Personalização do
+          Avatar, Privilégios Especiais, Missões Exclusivas, Acesso Antecipado a
+          Conteúdo, Participação em Eventos Especiais, Feedback Personalizado,
+          etc.)'
+                id='checkPersonalizacao'
+                name='rewardType'
+              />
+              <label class='form-check-label' for='checkPersonalizacao'>
+                Recompensas de Personalização e Exclusividade (Ex.:
+                Personalização do Avatar, Privilégios Especiais, Missões
+                Exclusivas, Acesso Antecipado a Conteúdo, Participação em
+                Eventos Especiais, Feedback Personalizado, etc.)
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                value='Recompensas de Avanço e Oportunidades (Ex.: Bônus de XP, Oportunidades
+          de Liderança, Conexões Profissionais, etc.)'
+                id='checkAvanco'
+                name='rewardType'
+              />
+              <label class='form-check-label' for='checkAvanco'>
+                Recompensas de Avanço e Oportunidades (Ex.: Bônus de XP,
+                Oportunidades de Liderança, Conexões Profissionais, etc.)
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                value='Recompensas Físicas e Tangíveis (Ex.: Prêmios Físicos, Cupons de
+          Desconto, Adesivos, etc.)'
+                id='checkFisicas'
+                name='rewardType'
+              />
+              <label class='form-check-label' for='checkFisicas'>
+                Recompensas Físicas e Tangíveis (Ex.: Prêmios Físicos, Cupons de
+                Desconto, Adesivos, etc.)
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                value='Outro'
+                id='checkOutroRecompensa'
+                aria-label='Checkbox for following text input'
+                name='rewardType'
+              />
+              <label class='form-check-label' for='checkOutroRecompensa'>
+                Outro:
+              </label>
+              <input
+                type='text'
+                class='form-control mt-1'
+                aria-label='Text input with checkbox'
+                id='otherReward'
+                name='rewardType'
+              />
+            </div>
+          </div>
+          <!-- Pergunta: Que tipo de recompensas motivariam os participantes nesta missão? -->
+
+          <!-- Pergunta: Como será feita a avaliação do desempenho dos participantes na
+        gamificação? -->
+          <div class='mb-3'>
+            <label for='evaluationGamification' class='form-label'>
+              Como será feita a avaliação do desempenho dos participantes na
+              gamificação?
+            </label>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                value='Medição de Progresso e Resultados (Ex.: Pontuação Total, Progresso
+          Individual, Taxa de Conclusão de Desafios, Tempo de Resposta em
+          Quizzes, Adesão a Prazos)'
+                id='checkProgressoResultados'
+                name='evaluationGamification'
+              />
+              <label class='form-check-label' for='checkProgressoResultados'>
+                Medição de Progresso e Resultados (Ex.: Pontuação Total,
+                Progresso Individual, Taxa de Conclusão de Desafios, Tempo de
+                Resposta em Quizzes, Adesão a Prazos)
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                value='Avaliação de Engajamento e Colaboração (Ex.: Nível de Colaboração em
+          Equipes, Participação Ativa em Fóruns, Envolvimento em Atividades
+          Colaborativas, Contribuição para Discussões em Grupo, Habilidade de
+          Comunicação em Chat ao Vivo, Colaboração em Desafios Criativos,
+          Participação em Eventos Especiais, Engajamento em Missões de
+          Exploração, Feedback Recebido e Implementado)'
+                id='checkEngajamentoColaboracao'
+                name='evaluationGamification'
+              />
+              <label class='form-check-label' for='checkEngajamentoColaboracao'>
+                Avaliação de Engajamento e Colaboração (Ex.: Nível de
+                Colaboração em Equipes, Participação Ativa em Fóruns,
+                Envolvimento em Atividades Colaborativas, Contribuição para
+                Discussões em Grupo, Habilidade de Comunicação em Chat ao Vivo,
+                Colaboração em Desafios Criativos, Participação em Eventos
+                Especiais, Engajamento em Missões de Exploração, Feedback
+                Recebido e Implementado)
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                value='Avaliação de Habilidades Específicas (Ex.: Criatividade em Projetos,
+          Precisão em Simulações, Resolução de Problemas em Quebra-Cabeças,
+          Tomada de Decisão Ética, Resolução Efetiva de Simulações de Negócios,
+          Adaptabilidade em Desafios Surpresa)'
+                id='checkHabilidadesEspecificas'
+                name='evaluationGamification'
+              />
+              <label class='form-check-label' for='checkHabilidadesEspecificas'>
+                Avaliação de Habilidades Específicas (Ex.: Criatividade em
+                Projetos, Precisão em Simulações, Resolução de Problemas em
+                Quebra-Cabeças, Tomada de Decisão Ética, Resolução Efetiva de
+                Simulações de Negócios, Adaptabilidade em Desafios Surpresa)
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                value='Outro'
+                id='checkOutroAvaliacao'
+                aria-label='Checkbox for following text input'
+                name='evaluationGamification'
+              />
+              <label class='form-check-label' for='checkOutroAvaliacao'>
+                Outro:
+              </label>
+              <input
+                type='text'
+                class='form-control mt-1'
+                aria-label='Text input with checkbox'
+                id='otherEvaluationGamification'
+                name='evaluationGamification'
+              />
+            </div>
+          </div>
+          <!-- Pergunta: Como será feita a avaliação do desempenho dos participantes na
+        gamificação? -->
+
+          <!-- Pergunta: Como os participantes receberão feedback durante a gamificação? -->
+          <div class='mb-3'>
+            <label for='feedbackType' class='form-label'>
+              Como os participantes receberão feedback durante a gamificação?
+            </label>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                value='Em tempo real'
+                id='checkTempoReal'
+                name='feedbackType'
+              />
+              <label class='form-check-label' for='checkTempoReal'>
+                Em tempo real (Ex.: Feedback imediato após quizzes, correções
+                automáticas durante simulações, notificações instantâneas ao
+                completar desafios, etc.)
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                value='Ao final da atividade'
+                id='checkFinalAtividade'
+                name='feedbackType'
+              />
+              <label class='form-check-label' for='checkFinalAtividade'>
+                Ao final da atividade (Ex.: Comentários após a conclusão de
+                projetos, avaliação de desempenho ao final de missões, resumos
+                de progresso após atividades em grupo, etc.)
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                value='Através de interações personalizadas (Ex.: Feedback detalhado em
+          sessões individuais, orientações específicas baseadas no desempenho,
+          reconhecimento personalizado em chats ou fóruns, etc.)'
+                id='checkInteracoesPersonalizadas'
+                name='feedbackType'
+              />
+              <label
+                class='form-check-label'
+                for='checkInteracoesPersonalizadas'
+              >
+                Através de interações personalizadas (Ex.: Feedback detalhado em
+                sessões individuais, orientações específicas baseadas no
+                desempenho, reconhecimento personalizado em chats ou fóruns,
+                etc.)
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                value='Outro'
+                id='checkOutroFeedback'
+                aria-label='Checkbox for following text input'
+                name='feedbackType'
+              />
+              <label class='form-check-label' for='checkOutroFeedback'>
+                Outro:
+              </label>
+              <input
+                type='text'
+                class='form-control mt-1'
+                aria-label='Text input with checkbox'
+                id='otherFeedbackType'
+                name='feedbackType'
+              />
+            </div>
+          </div>
+          <!-- Pergunta: Como os participantes receberão feedback durante a gamificação? -->
+
+          <!-- Pergunta: O que acontece se alguém não conseguir completar a missão? -->
+          <div class='mb-3'>
+            <label for='missionIncompleteOutcome' class='form-label'>
+              O que acontece se alguém não conseguir completar a missão?
+              (Escolha até 3 opções, ao menos uma é obrigatória)
+            </label>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                value='Segunda chance e incentivos para tentativas adicionais'
+                id='checkSegundaChance'
+                name='missionIncompleteOutcome'
+              />
+              <label class='form-check-label' for='checkSegundaChance'>
+                Segunda chance e incentivos para tentativas adicionais
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                value='Acesso a recursos, dicas e suporte comunitário ou individualizado'
+                id='checkAcessoRecursos'
+                name='missionIncompleteOutcome'
+              />
+              <label class='form-check-label' for='checkAcessoRecursos'>
+                Acesso a recursos, dicas e suporte comunitário ou
+                individualizado
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                value='Feedback construtivo e análise para melhorias, tanto individualmente quanto em equipe'
+                id='checkFeedbackConstrutivo'
+                name='missionIncompleteOutcome'
+              />
+              <label class='form-check-label' for='checkFeedbackConstrutivo'>
+                Feedback construtivo e análise para melhorias, tanto
+                individualmente quanto em equipe
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                value='Recompensas parciais e acesso a conteúdo adicional, mesmo sem conclusão completa'
+                id='checkRecompensasParciais'
+                name='missionIncompleteOutcome'
+              />
+              <label class='form-check-label' for='checkRecompensasParciais'>
+                Recompensas parciais e acesso a conteúdo adicional, mesmo sem
+                conclusão completa
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                value='Missões alternativas ou novos desafios para garantir participação contínua'
+                id='checkMissoesAlternativas'
+                name='missionIncompleteOutcome'
+              />
+              <label class='form-check-label' for='checkMissoesAlternativas'>
+                Missões alternativas ou novos desafios para garantir
+                participação contínua
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                value='Outro'
+                id='checkOutroMissaoIncompleta'
+                aria-label='Checkbox for following text input'
+                name='missionIncompleteOutcome'
+              />
+              <label class='form-check-label' for='checkOutroMissaoIncompleta'>
+                Outro:
+              </label>
+              <input
+                type='text'
+                class='form-control mt-1'
+                aria-label='Text input with checkbox'
+                id='otherMissionIncompleteOutcome'
+                name='missionIncompleteOutcome'
+              />
+            </div>
+          </div>
+          <button type='submit' class='btn btn-primary'>Enviar</button>
+        </form>
+      </p>
+    </div>
+  </div>
+</div>

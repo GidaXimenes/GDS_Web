@@ -1,0 +1,883 @@
+<div class='container d-flex justify-content-center align-items-center'>
+  <div class='card shadow-lg p-4' style='width: 100%; max-width: 800px;'>
+    <div class='card-body'>
+      <!-- Formulário começa aqui -->
+      <div class='mb-3 text-center'>
+        <h1>Projeto de Gamificação</h1>
+      </div>
+      <p class='col-6'>
+        <form action='/project/create' method='post'>
+          <!-- sobre a Gamificação -->
+          <div class='mb-3'>
+            Sobre a Gamificação
+          </div>
+          <!-- sobre a Gamificação -->
+          <!-- Pergunta: Nome do projeto -->
+          <div class='mb-3'>
+            <label for='name_project' class='form-label'>Nome do projeto</label>
+            <input
+              type='text'
+              class='form-control'
+              id='name_project'
+              name='name'
+            />
+          </div>
+          <!-- Pergunta: Nome do projeto -->
+
+          <!-- Pergunta: O que você planeja gamificar? -->
+          <div class='mb-3'>
+            <label for='modelGamification' class='form-label'>O que você planeja
+              gamificar?</label>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='radio'
+                name='modelGamification'
+                id='optionAula'
+                value='Aula'
+              />
+              <label class='form-check-label' for='optionAula'>
+                Aula
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='radio'
+                name='modelGamification'
+                id='optionModulo'
+                value='Modulo'
+              />
+              <label class='form-check-label' for='optionModulo'>
+                Módulo
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='radio'
+                name='modelGamification'
+                id='optionCurso'
+                value='Curso'
+              />
+              <label class='form-check-label' for='optionCurso'>
+                Curso
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='radio'
+                name='modelGamification'
+                id='optionEvento'
+                value='Evento'
+              />
+              <label class='form-check-label' for='optionEvento'>
+                Evento
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='radio'
+                name='modelGamification'
+                id='optionOutroModelo'
+                value='Outro'
+                aria-label='Radio button for following text input'
+              />
+              <label class='form-check-label' for='optionOutroModelo'>
+                Outro:
+              </label>
+              <input
+                type='text'
+                class='form-control'
+                aria-label='Text input with radio button'
+                id='otherModel'
+                name='modelGamification'
+                placeholder='Especifique'
+              />
+            </div>
+          </div>
+          <!-- Pergunta: O que você planeja gamificar? -->
+
+          <!-- Pergunta: Qual a duração estimada da gamificação? -->
+          <div class='mb-3'>
+            <label class='form-label'>Qual a duração estimada da gamificação?</label>
+
+            <div class='row g-2'>
+              <div class='col-auto'>
+                <div class='input-group input-group-sm'>
+                  <input
+                    type='number'
+                    class='form-control'
+                    placeholder='0'
+                    id='dias'
+                    name='dias'
+                    min='0'
+                    aria-label='Dias'
+                  />
+                  <span class='input-group-text' for='dias'>Dias</span>
+                </div>
+              </div>
+
+              <div class='col-auto'>
+                <div class='input-group input-group-sm'>
+                  <input
+                    type='number'
+                    class='form-control'
+                    placeholder='0'
+                    id='horas'
+                    name='horas'
+                    min='0'
+                    max='23'
+                    aria-label='Horas'
+                  />
+                  <span class='input-group-text' for='horas'>Horas</span>
+                </div>
+              </div>
+
+              <div class='col-auto'>
+                <div class='input-group input-group-sm'>
+                  <input
+                    type='number'
+                    class='form-control'
+                    placeholder='0'
+                    id='minutos'
+                    name='minutos'
+                    min='0'
+                    max='59'
+                    aria-label='Minutos'
+                  />
+                  <span class='input-group-text' for='minutos'>Minutos</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Pergunta: Qual a duração estimada da gamificação? -->
+
+          <!-- Pergunta: Qual o assunto que você deseja que os participantes aprendam? -->
+          <div class='mb-3'>
+            <label for='topicGamificacao' class='form-label'>Qual o assunto que
+              você deseja que os participantes aprendam?</label>
+            <input
+              type='text'
+              class='form-control'
+              id='topicGamificacao'
+              name='topicGamificacao'
+            />
+          </div>
+          <!-- Pergunta: Qual o assunto que você deseja que os participantes aprendam? -->
+
+          <!-- Pergunta: Qual o formato da aplicação? -->
+          <div class='mb-3'>
+            <label for='formatoAplicacao' class='form-label'>Qual o formato da
+              aplicação?</label>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='radio'
+                name='formatoAplicacao'
+                id='optionPresencial'
+                value='Presencial'
+              />
+              <label class='form-check-label' for='optionPresencial'>
+                Presencial
+              </label>
+            </div>
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='radio'
+                name='formatoAplicacao'
+                id='optionOnline'
+                value='Online'
+              />
+              <label class='form-check-label' for='optionOnline'>
+                Online
+              </label>
+            </div>
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='radio'
+                name='formatoAplicacao'
+                id='optionHibrido'
+                value='Híbrido (presencial e online)'
+              />
+              <label class='form-check-label' for='optionHibrido'>
+                Híbrido (presencial e online)
+              </label>
+            </div>
+          </div>
+          <!-- Pergunta : Qual o formato da aplicação? -->
+
+          <!-- Pergunta: Quantas missões deseja realizar nesta gamificação? -->
+          <div class='mb-3'>
+            <label for='qtdeMissoes' class='form-label'>Quantas missões deseja
+              realizar nesta gamificação?</label>
+            <input
+              type='number'
+              class='form-control'
+              id='qtdeMissoes'
+              name='qtdeMissoes'
+            />
+          </div>
+          <!-- Pergunta: Quantas missões deseja realizar nesta gamificação? -->
+
+          <!-- Pergunta: Quantas pessoas participarão da atividade gamificada? -->
+          <div class='mb-3'>
+            <label for='qtdeParticipantes' class='form-label'>Quantas pessoas
+              participarão da atividade gamificada?</label>
+            <input
+              type='number'
+              class='form-control'
+              id='qtdeParticipantes'
+              name='qtdeParticipantes'
+            />
+          </div>
+          <!-- Pergunta: Quantas pessoas participarão da atividade gamificada? -->
+
+          <!-- Pergunta: Qual é o perfil dos participantes, o que eles gostam? -->
+          <div class='mb-3'>
+            <label for='perfilParticipantes' class='form-label'>
+              Qual é o perfil dos participantes, o que eles gostam?
+            </label>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                value='Esportes e Atividades Físicas'
+                id='checkEsportes'
+                name='perfilParticipantes'
+              />
+              <label class='form-check-label' for='checkEsportes'>
+                Esportes e Atividades Físicas (ex.: futebol, corrida,
+                musculação)
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                value='Artes e Criatividade (ex.: pintura, música, fotografia)'
+                id='checkArtes'
+                name='perfilParticipantes'
+              />
+              <label class='form-check-label' for='checkArtes'>
+                Artes e Criatividade (ex.: pintura, música, fotografia)
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                value='Entretenimento e Cultura (ex.: filmes, séries, livros, jogos digitais,
+          jogos de mesa, teatro)'
+                id='checkCultura'
+                name='perfilParticipantes'
+              />
+              <label class='form-check-label' for='checkCultura'>
+                Entretenimento e Cultura (ex.: filmes, séries, livros, jogos
+                digitais, jogos de mesa, teatro)
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                value='Viagens e Aventura'
+                id='checkViagens'
+                name='perfilParticipantes'
+              />
+              <label class='form-check-label' for='checkViagens'>
+                Viagens e Aventura (ex.: exploração de natureza, viagens
+                culturais)
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                value='Culinária e Gastronomia'
+                id='checkCulinaria'
+                name='perfilParticipantes'
+              />
+              <label class='form-check-label' for='checkCulinaria'>
+                Culinária e Gastronomia (ex.: culinária, gastronomia, visitas a
+                restaurantes)
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                value='Tecnologia e Inovação'
+                id='checkTecnologia'
+                name='perfilParticipantes'
+              />
+              <label class='form-check-label' for='checkTecnologia'>
+                Tecnologia e Inovação (ex.: gadgets, programação, novas
+                tecnologias)
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                value='Atividades Sociais'
+                id='checkSociais'
+                name='perfilParticipantes'
+              />
+              <label class='form-check-label' for='checkSociais'>
+                Atividades Sociais (ex.: eventos sociais, networking, clubes)
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                value='Bem-Estar e Espiritualidade'
+                id='checkBemEstar'
+                name='perfilParticipantes'
+              />
+              <label class='form-check-label' for='checkBemEstar'>
+                Bem-Estar e Espiritualidade (ex.: yoga, meditação, práticas
+                holísticas)
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                value='Mundo Animal e Natureza'
+                id='checkAnimal'
+                name='perfilParticipantes'
+              />
+              <label class='form-check-label' for='checkAnimal'>
+                Mundo Animal e Natureza (ex.: cuidados com animais, ativismo
+                ambiental)
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                value='Nao tenho certeza'
+                id='checkNaoCerteza'
+                name='perfilParticipantes'
+              />
+              <label class='form-check-label' for='checkNaoCerteza'>
+                Não tenho certeza / Não sei
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                value='Outro'
+                id='checkOutros'
+                name='perfilParticipantes'
+              />
+              <label class='form-check-label' for='checkOutros'>
+                Outro:
+              </label>
+              <input
+                type='text'
+                class='form-control'
+                aria-label='Text input with radio button'
+                name='perfilParticipantes'
+              />
+            </div>
+          </div>
+          <!-- Pergunta: Qual é o perfil dos participantes, o que eles gostam? -->
+
+          <!-- Pergunta: Quais aspectos os participantes poderão personalizar em suas experiências na gamificação? -->
+          <div class='mb-3'>
+            <label for='personalizacaoGamificacao' class='form-label'>
+              Quais aspectos os participantes poderão personalizar em suas
+              experiências na gamificação? (Escolha até 3 opções, ao menos uma é
+              obrigatória)
+            </label>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                value='Customizar sua identidade no jogo (avatar, nome, apelido, perfil)'
+                id='checkIdentidade'
+                name='personalizacaoGamificacao'
+              />
+              <label class='form-check-label' for='checkIdentidade'>
+                Customizar sua identidade no jogo (avatar, nome, apelido,
+                perfil)
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                value='Personalizar o tema e o ambiente virtual do jogo'
+                id='checkTemaAmbiente'
+                name='personalizacaoGamificacao'
+              />
+              <label class='form-check-label' for='checkTemaAmbiente'>
+                Personalizar o tema e o ambiente virtual do jogo
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                value='Personalizar itens e recompensas virtuais (emblemas, distintivos,
+          acessórios, etc.)'
+                id='checkItensRecompensas'
+                name='personalizacaoGamificacao'
+              />
+              <label class='form-check-label' for='checkItensRecompensas'>
+                Personalizar itens e recompensas virtuais (emblemas,
+                distintivos, acessórios, etc.)
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                value='Escolher e ajustar desafios e missões'
+                id='checkDesafiosMissoes'
+                name='personalizacaoGamificacao'
+              />
+              <label class='form-check-label' for='checkDesafiosMissoes'>
+                Escolher e ajustar desafios e missões
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                value='Ajustar configurações e preferências pessoais (privacidade,
+          notificações, acessibilidade, comunicação)'
+                id='checkPreferencias'
+                name='personalizacaoGamificacao'
+              />
+              <label class='form-check-label' for='checkPreferencias'>
+                Ajustar configurações e preferências pessoais (privacidade,
+                notificações, acessibilidade, comunicação)
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                value='Customizar a identidade da equipe no jogo (avatar representativo)'
+                id='checkEquipe'
+                name='personalizacaoGamificacao'
+              />
+              <label class='form-check-label' for='checkEquipe'>
+                Customizar a identidade da equipe no jogo (avatar
+                representativo)
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                value='Escolher modos de participação (individual ou equipes) e papéis'
+                id='checkModosPapeis'
+                name='personalizacaoGamificacao'
+              />
+              <label class='form-check-label' for='checkModosPapeis'>
+                Escolher entre modos de participação (individual ou equipes) e
+                papéis específicos
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                id='checkOutraPersonalizacao'
+                name='personalizacaoGamificacao'
+                value='Outro'
+              />
+              <label class='form-check-label' for='checkOutraPersonalizacao'>
+                Outro:
+              </label>
+              <input
+                type='text'
+                class='form-control'
+                id='outraPersonalizacao'
+                placeholder='Especifique'
+                name='personalizacaoGamificacao'
+              />
+            </div>
+          </div>
+          <!-- Pergunta: Quais aspectos os participantes poderão personalizar em suas experiências na gamificação? -->
+
+          <!-- sobre a narrativa -->
+          <div class='mb-3'>
+            Sobre a narrativa
+          </div>
+          <!-- sobre a narrativa -->
+
+          <!-- Pergunta: Qual(is) gênero(s) de narrativa você gostaria de incorporar na gamificação? -->
+          <div class='mb-3'>
+            <label for='generosNarrativa' class='form-label'>
+              Qual(is) gênero(s) de narrativa você gostaria de incorporar na
+              gamificação? (Escolha até 3 gêneros)
+            </label>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                name='generosNarrativa'
+                value='Ação e Aventura'
+                id='checkAcaoAventura'
+              />
+              <label class='form-check-label' for='checkAcaoAventura'>
+                Ação e Aventura
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                name='generosNarrativa'
+                value='Drama'
+                id='checkDrama'
+              />
+              <label class='form-check-label' for='checkDrama'>
+                Drama
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                name='generosNarrativa'
+                value='Comédia'
+                id='checkComedia'
+              />
+              <label class='form-check-label' for='checkComedia'>
+                Comédia
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                name='generosNarrativa'
+                value='Fantasia'
+                id='checkFantasia'
+              />
+              <label class='form-check-label' for='checkFantasia'>
+                Fantasia
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                name='generosNarrativa'
+                value='Ficção Científica'
+                id='checkFiccaoCientifica'
+              />
+              <label class='form-check-label' for='checkFiccaoCientifica'>
+                Ficção Científica
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                name='generosNarrativa'
+                value='Mistério e Suspense'
+                id='checkMisterioSuspense'
+              />
+              <label class='form-check-label' for='checkMisterioSuspense'>
+                Mistério e Suspense
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                name='generosNarrativa'
+                value='Simulação'
+                id='checkSimulacao'
+              />
+              <label class='form-check-label' for='checkSimulacao'>
+                Simulação
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                name='generosNarrativa'
+                value='Terror'
+                id='checkTerror'
+              />
+              <label class='form-check-label' for='checkTerror'>
+                Terror
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                name='generosNarrativa'
+                value='Outro'
+                id='checkOutroGenero'
+              />
+              <label class='form-check-label' for='checkOutroGenero'>
+                Outro:
+              </label>
+              <input
+                type='text'
+                class='form-control'
+                id='outroGenero'
+                name='generosNarrativa'
+                placeholder='Especifique'
+              />
+            </div>
+          </div>
+          <!-- Pergunta: Qual(is) gênero(s) de narrativa você gostaria de incorporar na gamificação? -->
+
+          <!-- Pergunta: Existe algum tema específico que gostaria de incorporar na narrativa da gamificação? -->
+          <div class='mb-3'>
+            <label for='temaNarrativa' class='form-label'>
+              Existe algum tema específico que gostaria de incorporar na
+              narrativa da gamificação? Aqui vão alguns exemplos:
+            </label>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='radio'
+                name='temaNarrativa'
+                id='optionViagemTempo'
+                value='Viagem no Tempo'
+              />
+              <label class='form-check-label' for='optionViagemTempo'>
+                Viagem no Tempo
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='radio'
+                name='temaNarrativa'
+                id='optionAventuraEspacial'
+                value='Aventura Espacial'
+              />
+              <label class='form-check-label' for='optionAventuraEspacial'>
+                Aventura Espacial
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='radio'
+                name='temaNarrativa'
+                id='optionVelhoOeste'
+                value='Velho Oeste'
+              />
+              <label class='form-check-label' for='optionVelhoOeste'>
+                Velho Oeste
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='radio'
+                name='temaNarrativa'
+                id='optionUniversosAlternativos'
+                value='Universos Alternativos'
+              />
+              <label class='form-check-label' for='optionUniversosAlternativos'>
+                Universos Alternativos
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='radio'
+                name='temaNarrativa'
+                id='optionSobrevivenciaExploracao'
+                value='Sobrevivência e Exploração'
+              />
+              <label
+                class='form-check-label'
+                for='optionSobrevivenciaExploracao'
+              >
+                Sobrevivência e Exploração
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='radio'
+                name='temaNarrativa'
+                id='optionProtegerNatureza'
+                value='Proteger a Natureza e os Animais'
+              />
+              <label class='form-check-label' for='optionProtegerNatureza'>
+                Proteger a Natureza e os Animais
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='radio'
+                name='temaNarrativa'
+                id='optionMundoUtopico'
+                value='Mundo Utópico'
+              />
+              <label class='form-check-label' for='optionMundoUtopico'>
+                Mundo Utópico
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='radio'
+                name='temaNarrativa'
+                id='optionPiratas'
+                value='Piratas'
+              />
+              <label class='form-check-label' for='optionPiratas'>
+                Piratas
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='radio'
+                name='temaNarrativa'
+                id='optionTempoMedieval'
+                value='Tempo Medieval'
+              />
+              <label class='form-check-label' for='optionTempoMedieval'>
+                Tempo Medieval
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='radio'
+                name='temaNarrativa'
+                id='optionInvestigacaoCriminal'
+                value='Investigação Criminal'
+              />
+              <label class='form-check-label' for='optionInvestigacaoCriminal'>
+                Investigação Criminal
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='radio'
+                name='temaNarrativa'
+                id='optionDramaMedico'
+                value='Drama Médico'
+              />
+              <label class='form-check-label' for='optionDramaMedico'>
+                Drama Médico
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='radio'
+                name='temaNarrativa'
+                id='optionSustentabilidade'
+                value='Sustentabilidade'
+              />
+              <label class='form-check-label' for='optionSustentabilidade'>
+                Sustentabilidade
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='radio'
+                name='temaNarrativa'
+                id='optionCenariosTrabalho'
+                value='Cenários de Trabalho'
+              />
+              <label class='form-check-label' for='optionCenariosTrabalho'>
+                Cenários de Trabalho
+              </label>
+            </div>
+
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='radio'
+                name='temaNarrativa'
+                id='optionOutraNarrativa'
+                value='Outro'
+              />
+              <label class='form-check-label' for='optionOutraNarrativa'>
+                Outro:
+              </label>
+              <input
+                type='text'
+                class='form-control'
+                id='outraNarrativa'
+                name='temaNarrativa'
+                placeholder='Especifique'
+              />
+            </div>
+          </div>
+          <!-- Pergunta: Existe algum tema específico que gostaria de incorporar na narrativa da gamificação? -->
+          <button type='submit' class='btn btn-primary'>Enviar</button>
+        </form>
+      </p>
+    </div>
+  </div>
+</div>
