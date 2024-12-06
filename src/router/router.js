@@ -5,8 +5,11 @@ const missionController = require('../controllers/mission');
 
 const router = Router();
 
-/*router.get('/', mainController.index);
-router.get("/main/hb1", mainController.hb1);*/
+//router.get('/', projectController.index);
+/*router.get("/main/hb1", mainController.hb1);*/
+router.get('/', (req, res) => {
+  res.redirect('/project');
+});
 
 // Project
 router.get('/project', projectController.index);
